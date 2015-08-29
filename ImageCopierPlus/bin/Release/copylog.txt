@@ -1,0 +1,20 @@
+-------------------------------------------------
+FastCopy(ver2.11) start at 2014/12/27 13:01:15
+
+<Source>  G:\DCIM\100EK113
+<DestDir> E:\Trail Cams\2014\11-28 to 12-21\Sanctuary Feeder
+<Command> Diff (Size/Date) (with Verify)
+
+ No Errors
+
+TotalRead = 8617.8 MB
+TotalWrite = 8617.8 MB
+TotalFiles = 9148 (0)
+TotalTime= 473.81 sec
+TransRate= 18.19 MB/s
+FileRate  = 19.31 files/s
+VerifyRead= 8617.8 MB
+VerifyFiles= 9148
+
+Result : (ErrFiles : 0 / ErrDirs : 0)
+
