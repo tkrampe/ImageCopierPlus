@@ -168,12 +168,12 @@ namespace ImageCopierPlus
             settings._cameraNames.Add("Sanctuary Mineral Lick");
             settings._cameraNames.Add("Valley Plot Feeder");
             
-            settings._cardDrive = @"G:\";
+            settings._cardDrive = @"K:\";
             settings._cardParentDirectory = @"DCIM";
             settings._cardSubDirectoryStructure = @"100EK113";
-            settings._outputDir = @"E:\Trail Cams\2014";
+            settings._outputDir = @"E:\Trail Cams\2015";
             settings._fastCopyDirectoryPath = @"..\FastCopy";
-            settings._imageViewerPlusExecutablePath = @"D:\Google Drive\ImageViewerPlus\ImageViewerPlus\bin\Release\ImageViewerPlus.exe";
+            settings._imageViewerPlusExecutablePath = @"C:\Users\Tyler\Documents\GitHub\ImageViewerPlus\ImageViewerPlus\bin\Release\ImageViewerPlus.exe";
 
             return settings;
         }

@@ -17,3 +17,13 @@ D:\Google Drive\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.Date
 D:\Google Drive\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.MainForm.resources
 D:\Google Drive\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.Properties.Resources.resources
 D:\Google Drive\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.csproj.GenerateResource.Cache
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\bin\Release\ImageCopierPlus.exe.config
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.exe
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.pdb
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\bin\Release\ImageCopierPlus.exe
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\bin\Release\ImageCopierPlus.pdb
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.csprojResolveAssemblyReference.cache
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.DatePicker.resources
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.MainForm.resources
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.Properties.Resources.resources
+C:\Users\Tyler\Documents\GitHub\ImageCopierPlus\ImageCopierPlus\obj\Release\ImageCopierPlus.csproj.GenerateResource.Cache
