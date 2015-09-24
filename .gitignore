@@ -43,3 +43,4 @@ Temporary Items
 .apdisk
 *.suo
 ImageCopierPlus/bin/Release/
+ImageCopierPlus/obj/
