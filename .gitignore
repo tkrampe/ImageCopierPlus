@@ -44,3 +44,4 @@ Temporary Items
 *.suo
 ImageCopierPlus/bin/Release/
 ImageCopierPlus/obj/
+ImageCopierPlus/bin/Debug/
