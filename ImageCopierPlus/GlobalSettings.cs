@@ -9,6 +9,7 @@ namespace ImageCopierPlus
     [Serializable]
     public class GlobalSettings
     {
+        [NonSerialized]
         private ICollection<string> _cameraNames;
         private string _cardDrive;
         private string _cardParentDirectory;
@@ -38,6 +39,7 @@ namespace ImageCopierPlus
 
             try
             {
+                System.IO.Directory.CreateDirectory(System.IO.Directory.GetParent(settingsFilePath).FullName);
                 System.IO.FileStream file = System.IO.File.OpenWrite(settingsFilePath);
                 System.Runtime.Serialization.Formatters.Soap.SoapFormatter soapFormatter = new System.Runtime.Serialization.Formatters.Soap.SoapFormatter();
                 soapFormatter.Serialize(file, this);
@@ -131,7 +133,7 @@ namespace ImageCopierPlus
         {
             get
             {
-                return System.IO.Path.Combine(ExecutingAssemblyDirectoryPath, "globalSettings.xml");
+                return System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ImageCopierPlus", "globalSettings.xml");
             }
         }
                 
@@ -140,7 +142,11 @@ namespace ImageCopierPlus
             string settingsFilePath = SettingsFilePath;
 
             if (!System.IO.File.Exists(settingsFilePath))
-                return CreateDefaultSettings();
+            {
+                var defaultSettings = CreateDefaultSettings();
+                defaultSettings.SaveSettings();
+                return defaultSettings;
+            }
 
             try
             {
