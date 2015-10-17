@@ -152,7 +152,9 @@ namespace ImageCopierPlus
             {
                 System.IO.FileStream file = System.IO.File.OpenRead(settingsFilePath);
                 System.Runtime.Serialization.Formatters.Soap.SoapFormatter soapFormatter = new System.Runtime.Serialization.Formatters.Soap.SoapFormatter();
-                return soapFormatter.Deserialize(file) as GlobalSettings;
+                GlobalSettings settings = soapFormatter.Deserialize(file) as GlobalSettings;
+                AssignCameraNames(settings);
+                return settings;
             }
             catch (Exception)
             {
@@ -164,6 +166,20 @@ namespace ImageCopierPlus
         private static GlobalSettings CreateDefaultSettings()
         {
             GlobalSettings settings = new GlobalSettings();
+            AssignCameraNames(settings);
+                        
+            settings._cardDrive = @"K:\";
+            settings._cardParentDirectory = @"DCIM";
+            settings._cardSubDirectoryStructure = @"100EK113";
+            settings._outputDir = @"E:\Trail Cams\2015";
+            settings._fastCopyDirectoryPath = @"..\FastCopy";
+            settings._imageViewerPlusExecutablePath = @"C:\Users\Tyler\Documents\GitHub\ImageViewerPlus\ImageViewerPlus\bin\Release\ImageViewerPlus.exe";
+
+            return settings;
+        }
+
+        private static void AssignCameraNames(GlobalSettings settings)
+        {
             settings._cameraNames = new System.Collections.ObjectModel.ObservableCollection<string>();
             settings._cameraNames.Add("Lower Plot");
             settings._cameraNames.Add("Lower Plot Wick");
@@ -173,15 +189,6 @@ namespace ImageCopierPlus
             settings._cameraNames.Add("Sanctuary Feeder");
             settings._cameraNames.Add("Sanctuary Mineral Lick");
             settings._cameraNames.Add("Valley Plot Feeder");
-            
-            settings._cardDrive = @"K:\";
-            settings._cardParentDirectory = @"DCIM";
-            settings._cardSubDirectoryStructure = @"100EK113";
-            settings._outputDir = @"E:\Trail Cams\2015";
-            settings._fastCopyDirectoryPath = @"..\FastCopy";
-            settings._imageViewerPlusExecutablePath = @"C:\Users\Tyler\Documents\GitHub\ImageViewerPlus\ImageViewerPlus\bin\Release\ImageViewerPlus.exe";
-
-            return settings;
         }
     }
 }
