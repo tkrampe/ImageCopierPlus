@@ -159,19 +159,13 @@ namespace ImageCopierPlus
         {
             GlobalSettings settings = new GlobalSettings();
             settings._cameraNames = new System.Collections.ObjectModel.ObservableCollection<string>();
-            settings._cameraNames.Add("Lower Plot");
-            settings._cameraNames.Add("Lower Plot Wick");
-            settings._cameraNames.Add("Pinch Point");
-            settings._cameraNames.Add("Road Feeder");
-            settings._cameraNames.Add("Road Mineral Lick");
-            settings._cameraNames.Add("Sanctuary Feeder");
-            settings._cameraNames.Add("Sanctuary Mineral Lick");
-            settings._cameraNames.Add("Valley Plot Feeder");
-            
+            settings._cameraNames.Add("Field Feeder");
+            settings._cameraNames.Add("Crossroads Feeder");
+                        
             settings._cardDrive = @"K:\";
             settings._cardParentDirectory = @"DCIM";
             settings._cardSubDirectoryStructure = @"100EK113";
-            settings._outputDir = @"E:\Trail Cams\2015";
+            settings._outputDir = @"E:\Trail Cams\2016";
             settings._fastCopyDirectoryPath = @"..\FastCopy";
             settings._imageViewerPlusExecutablePath = @"C:\Users\Tyler\Documents\GitHub\ImageViewerPlus\ImageViewerPlus\bin\Release\ImageViewerPlus.exe";
 
