@@ -36,25 +36,28 @@
             // _lblCameraName
             // 
             this._lblCameraName.AutoSize = true;
-            this._lblCameraName.Location = new System.Drawing.Point(14, 9);
+            this._lblCameraName.Location = new System.Drawing.Point(21, 14);
+            this._lblCameraName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this._lblCameraName.Name = "_lblCameraName";
-            this._lblCameraName.Size = new System.Drawing.Size(77, 13);
+            this._lblCameraName.Size = new System.Drawing.Size(115, 20);
             this._lblCameraName.TabIndex = 0;
             this._lblCameraName.Text = "Camera Name:";
             // 
             // _comboBoxNames
             // 
             this._comboBoxNames.FormattingEnabled = true;
-            this._comboBoxNames.Location = new System.Drawing.Point(14, 25);
+            this._comboBoxNames.Location = new System.Drawing.Point(21, 38);
+            this._comboBoxNames.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._comboBoxNames.Name = "_comboBoxNames";
-            this._comboBoxNames.Size = new System.Drawing.Size(236, 21);
+            this._comboBoxNames.Size = new System.Drawing.Size(352, 28);
             this._comboBoxNames.TabIndex = 1;
             // 
             // _btnOk
             // 
-            this._btnOk.Location = new System.Drawing.Point(265, 24);
+            this._btnOk.Location = new System.Drawing.Point(398, 37);
+            this._btnOk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this._btnOk.Name = "_btnOk";
-            this._btnOk.Size = new System.Drawing.Size(75, 23);
+            this._btnOk.Size = new System.Drawing.Size(112, 35);
             this._btnOk.TabIndex = 2;
             this._btnOk.Text = "OK";
             this._btnOk.UseVisualStyleBackColor = true;
@@ -62,17 +65,18 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 63);
+            this.ClientSize = new System.Drawing.Size(530, 97);
             this.Controls.Add(this._btnOk);
             this.Controls.Add(this._comboBoxNames);
             this.Controls.Add(this._lblCameraName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Location = new System.Drawing.Point(2695, 529);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Copy Card";
             this.ResumeLayout(false);
             this.PerformLayout();

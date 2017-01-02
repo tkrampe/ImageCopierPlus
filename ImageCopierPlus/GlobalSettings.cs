@@ -9,6 +9,7 @@ namespace ImageCopierPlus
     [Serializable]
     public class GlobalSettings
     {
+        [NonSerialized]
         private ICollection<string> _cameraNames;
         private string _cardDrive;
         private string _cardParentDirectory;
@@ -38,6 +39,7 @@ namespace ImageCopierPlus
 
             try
             {
+                System.IO.Directory.CreateDirectory(System.IO.Directory.GetParent(settingsFilePath).FullName);
                 System.IO.FileStream file = System.IO.File.OpenWrite(settingsFilePath);
                 System.Runtime.Serialization.Formatters.Soap.SoapFormatter soapFormatter = new System.Runtime.Serialization.Formatters.Soap.SoapFormatter();
                 soapFormatter.Serialize(file, this);
@@ -131,7 +133,7 @@ namespace ImageCopierPlus
         {
             get
             {
-                return System.IO.Path.Combine(ExecutingAssemblyDirectoryPath, "globalSettings.xml");
+                return System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ImageCopierPlus", "globalSettings.xml");
             }
         }
                 
@@ -140,13 +142,19 @@ namespace ImageCopierPlus
             string settingsFilePath = SettingsFilePath;
 
             if (!System.IO.File.Exists(settingsFilePath))
-                return CreateDefaultSettings();
+            {
+                var defaultSettings = CreateDefaultSettings();
+                defaultSettings.SaveSettings();
+                return defaultSettings;
+            }
 
             try
             {
                 System.IO.FileStream file = System.IO.File.OpenRead(settingsFilePath);
                 System.Runtime.Serialization.Formatters.Soap.SoapFormatter soapFormatter = new System.Runtime.Serialization.Formatters.Soap.SoapFormatter();
-                return soapFormatter.Deserialize(file) as GlobalSettings;
+                GlobalSettings settings = soapFormatter.Deserialize(file) as GlobalSettings;
+                AssignCameraNames(settings);
+                return settings;
             }
             catch (Exception)
             {
@@ -158,18 +166,23 @@ namespace ImageCopierPlus
         private static GlobalSettings CreateDefaultSettings()
         {
             GlobalSettings settings = new GlobalSettings();
-            settings._cameraNames = new System.Collections.ObjectModel.ObservableCollection<string>();
-            settings._cameraNames.Add("Field Feeder");
-            settings._cameraNames.Add("Crossroads Feeder");
+            AssignCameraNames(settings);
                         
             settings._cardDrive = @"K:\";
             settings._cardParentDirectory = @"DCIM";
             settings._cardSubDirectoryStructure = @"100EK113";
-            settings._outputDir = @"E:\Trail Cams\2016";
+            settings._outputDir = @"E:\Trail Cams\2015";
             settings._fastCopyDirectoryPath = @"..\FastCopy";
             settings._imageViewerPlusExecutablePath = @"C:\Users\Tyler\Documents\GitHub\ImageViewerPlus\ImageViewerPlus\bin\Release\ImageViewerPlus.exe";
 
             return settings;
+        }
+
+        private static void AssignCameraNames(GlobalSettings settings)
+        {
+            settings._cameraNames = new System.Collections.ObjectModel.ObservableCollection<string>();
+            settings._cameraNames.Add("Field Feeder");
+            settings._cameraNames.Add("Crossroads Feeder");
         }
     }
 }
